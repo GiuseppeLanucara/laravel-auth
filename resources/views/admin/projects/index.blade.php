@@ -19,7 +19,8 @@
                                 <th scope="row">{{ $project->title }}</th>
                                 <td>{{ $project->created_at }}</td>
                                 <td>
-                                    <a class="btn btn-success" href="{{ route('admin.projects.show', $project->slug) }}">
+                                    <a class="btn btn-success bg-primary"
+                                        href="{{ route('admin.projects.show', $project->slug) }}">
                                         <i class="fa-solid fa-eye"></i>
                                     </a>
                                 </td>
