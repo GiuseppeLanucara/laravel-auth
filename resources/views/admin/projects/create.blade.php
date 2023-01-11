@@ -18,12 +18,24 @@
                     @csrf
                     <div class="form-group  mb-3">
                         <label for="title">Titolo</label>
-                        <input type="text" id="title" name="title" class="form-control">
+                        <input type="text" id="title" name="title"
+                            class="form-control @error('title') is-invalid @enderror" value="{{ old('title') }}">
+                        @error('title')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+
                     </div>
 
                     <div class="form-group  mb-3">
                         <label for="title">Contenuto</label>
-                        <textarea id="content" name="content" rows="10" class="form-control"></textarea>
+                        <textarea id="content" name="content" rows="10" class="form-control @error('content') is-invalid @enderror">{{ old('content') }}</textarea>
+                        @error('content')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <button class="btn btn-primary" type="submit">Salva Progetto</button>
