@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h2 class="text-center mt-4">Inserisci un nuovo progetto</h2>
+        <h2 class="text-center mt-4 mb-4">Inserisci un nuovo progetto</h2>
         <div class="justify-content-center row ">
             <div class="col-8">
                 @include('partials.errors')
