@@ -5,6 +5,15 @@
         <h2 class="text-center mt-4">Inserisci un nuovo progetto</h2>
         <div class="justify-content-center row ">
             <div class="col-8">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form action="{{ route('admin.projects.store') }}" method="POST">
                     @csrf
                     <div class="form-group  mb-3">
