@@ -3,6 +3,11 @@
 @section('content')
     <div class="container mt-5">
         <h2 class="text-center mb-5">Tutti i miei Progetti</h2>
+        <div class="text-end">
+            <a class="btn btn-primary" href="{{ route('admin.projects.create') }}">
+                Nuovo Progetto
+            </a>
+        </div>
         <div class="row justify-content-center">
             <div class="col-8">
                 <table class="table">
