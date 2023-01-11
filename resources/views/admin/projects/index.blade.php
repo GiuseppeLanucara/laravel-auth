@@ -10,6 +10,11 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-8">
+                @if (session('message'))
+                    <div class="alert alert-success">
+                        {{ session('message') }}
+                    </div>
+                @endif
                 <table class="table">
                     <thead>
                         <tr>
