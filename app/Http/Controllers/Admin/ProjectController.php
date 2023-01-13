@@ -85,9 +85,17 @@ class ProjectController extends Controller
     {
         $form_data = $request->all();
         $form_data['slug'] = Project::generateSlug($form_data['title']);
-        $project->update($form_data);
-        $project->update($form_data);
 
+
+
+        if ($request->hasFile('cover_image')) {
+            if ($project->cover_image) {
+                Storage::delete($project->cover_image);
+            }
+            $path = Storage::put('project_images', $request->cover_image);
+            $form_data['cover_image'] = $path;
+        }
+        $project->update($form_data);
         return redirect()->route('admin.projects.index')->with('message', "$project->title è stato modificato");
     }
 

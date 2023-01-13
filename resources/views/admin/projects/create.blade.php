@@ -21,7 +21,13 @@
 
                     <div class="form-group mb-3">
                         <label for="cover_image">Immagine</label>
-                        <input type="file" name="cover_image" id="cover_image" class="form-control">
+                        <input type="file" name="cover_image" id="cover_image"
+                            class="form-control @error('cover_image') is-invalid @enderror">
+                        @error('cover_image')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <div class="form-group  mb-3">
